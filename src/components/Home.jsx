@@ -1,11 +1,23 @@
 import { useNavigate } from "react-router-dom";
 import picture1 from "../png/logo.png";
+import styled from "styled-components";
+
+const HomeDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  width: "100px";
+`;
+const HomeImg = styled.img`
+  width: 800px;
+  margin: 1rem;
+`;
 
 const Home = () => {
   const navigate = useNavigate();
   return (
-    <div>
-      <img src={picture1} style={{ width: "800px" }} />
+    <HomeDiv>
+      <HomeImg src={`${picture1}`} />
       <button
         onClick={() => {
           navigate("/dex");
@@ -13,7 +25,7 @@ const Home = () => {
       >
         포켓몬 도감 시작하기
       </button>
-    </div>
+    </HomeDiv>
   );
 };
 
