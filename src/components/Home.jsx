@@ -6,11 +6,11 @@ const HomeDiv = styled.div`
   display: flex;
   flex-direction: column;
   place-items: center;
-  width: "100px";
+  margin: 10rem;
 `;
 const HomeImg = styled.img`
   width: 800px;
-  margin: 1rem;
+  margin: 2rem;
 `;
 
 const Home = () => {
