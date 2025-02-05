@@ -1,6 +1,6 @@
 import { addPokemon } from "../slices/pokemonsSlice";
 import { useDispatch } from "react-redux";
-import { CardDiv } from "../style/styledcomponent";
+import { ButtonCard, CardDiv } from "../style/styledcomponent";
 import { useNavigate } from "react-router-dom";
 
 const PokemonCard = (mock) => {
@@ -23,7 +23,7 @@ const PokemonCard = (mock) => {
       <img src={`${mock.img_url}`} />
       <span>{mock.korean_name}</span>
       <span>No. {mock.id}</span>
-      <button
+      <ButtonCard
         onClick={() => {
           dispatch(
             addPokemon({
@@ -37,7 +37,7 @@ const PokemonCard = (mock) => {
         }}
       >
         추가
-      </button>
+      </ButtonCard>
     </CardDiv>
   );
 };

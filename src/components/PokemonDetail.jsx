@@ -1,28 +1,34 @@
 import { useLocation, useNavigate } from "react-router-dom";
+import {
+  ButtonCard,
+  DetailDiv,
+  DetailImg,
+  DetailSpan,
+  Detailtitle,
+} from "../style/styledcomponent";
 
 const PokemonDetail = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const info = { ...location.state };
   return (
-    <div>
-      <img src={`${info.img_url}`} />
-      <span>{info.korean_name}</span>
+    <DetailDiv>
+      <DetailImg src={`${info.img_url}`} />
+      <Detailtitle>{info.korean_name}</Detailtitle>
       <span>
-        타입:
         {info.types.map((type, index) => {
-          return <div key={index}>{type}</div>;
+          return <DetailSpan key={index}>{type}</DetailSpan>;
         })}
       </span>
-      <span>{info.description}</span>
-      <button
+      <DetailSpan>{info.description}</DetailSpan>
+      <ButtonCard
         onClick={() => {
           navigate("/dex");
         }}
       >
         뒤로가기
-      </button>
-    </div>
+      </ButtonCard>
+    </DetailDiv>
   );
 };
 

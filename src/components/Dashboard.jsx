@@ -6,6 +6,7 @@ import {
   BallDiv,
   BeforeCatch,
   AfterCatch,
+  ButtonCard,
 } from "../style/styledcomponent";
 
 const Dashboard = () => {
@@ -29,7 +30,7 @@ const Dashboard = () => {
               <img src={`${poke.img_url}`}></img>
               <span>{poke.korean_name}</span>
               <span>No. {poke.id}</span>
-              <button
+              <ButtonCard
                 onClick={() => {
                   dispatch(
                     deletePokemon({
@@ -39,7 +40,7 @@ const Dashboard = () => {
                 }}
               >
                 삭제하기
-              </button>
+              </ButtonCard>
             </AfterCatch>
           );
         })}
