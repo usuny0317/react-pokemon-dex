@@ -1,6 +1,7 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import picture2 from "../png/ball.png";
 import styled from "styled-components";
+import { deletePokemon } from "../slices/pokemonsSlice";
 
 const DashDiv = styled.div`
   background-color: whitesmoke;
@@ -30,7 +31,7 @@ const AfterCatch = styled.div`
 `;
 const Dashboard = () => {
   const myPoke = useSelector((state) => state.pokemons);
-
+  const dispatch = useDispatch();
   const defaultcard = () => {
     let result = [];
     for (let i = myPoke.length; i < 6; i++) {
@@ -49,7 +50,21 @@ const Dashboard = () => {
               <img src={`${poke.img_url}`}></img>
               <span>{poke.korean_name}</span>
               <span>No. {poke.id}</span>
-              <button>삭제하기</button>
+              <button
+                onClick={() => {
+                  dispatch(
+                    deletePokemon({
+                      img_url: poke.img_url,
+                      korean_name: poke.korean_name,
+                      types: poke.types,
+                      id: poke.id,
+                      description: poke.description,
+                    })
+                  );
+                }}
+              >
+                삭제하기
+              </button>
             </AfterCatch>
           );
         })}

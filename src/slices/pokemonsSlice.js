@@ -7,14 +7,26 @@ const pokemonSlice = createSlice({
   initialState,
   reducers: {
     addPokemon: (state, action) => {
-      if (state.length >= 6) {
-        alert("6마리까지만 가능합니다.");
+      if (state.some((poke) => poke.id === action.payload.id)) {
+        alert("이미 추가된 포켓몬 입니다!");
       } else {
-        state.push(action.payload);
+        if (state.length >= 6) {
+          alert("6마리까지만 가능합니다.");
+        } else {
+          state.push(action.payload);
+        }
       }
+    },
+    deletePokemon: (state, action) => {
+      console.log("되는중?", state);
+
+      return (state = state.filter((poke) => {
+        return poke.id !== action.payload.id;
+      }));
+      console.log("됐나?", state);
     },
   },
 });
 
-export const { addPokemon } = pokemonSlice.actions;
+export const { addPokemon, deletePokemon } = pokemonSlice.actions;
 export default pokemonSlice.reducer;
