@@ -1,34 +1,13 @@
 import { useDispatch, useSelector } from "react-redux";
 import picture2 from "../png/ball.png";
-import styled from "styled-components";
 import { deletePokemon } from "../slices/pokemonsSlice";
+import {
+  DashDiv,
+  BallDiv,
+  BeforeCatch,
+  AfterCatch,
+} from "../style/styledcomponent";
 
-const DashDiv = styled.div`
-  background-color: whitesmoke;
-  margin-bottom: 10px;
-  place-items: center;
-`;
-
-const BallDiv = styled.div`
-  display: flex;
-  place-items: center;
-`;
-
-const BeforeCatch = styled.img`
-  width: 80px;
-  margin: 2rem;
-`;
-const AfterCatch = styled.div`
-  background-color: white;
-  border-radius: 3%;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-
-  display: flex;
-  flex-direction: column;
-  place-items: center;
-  margin: 10px;
-  padding: 10px;
-`;
 const Dashboard = () => {
   const myPoke = useSelector((state) => state.pokemons);
   const dispatch = useDispatch();
@@ -54,11 +33,7 @@ const Dashboard = () => {
                 onClick={() => {
                   dispatch(
                     deletePokemon({
-                      img_url: poke.img_url,
-                      korean_name: poke.korean_name,
-                      types: poke.types,
                       id: poke.id,
-                      description: poke.description,
                     })
                   );
                 }}

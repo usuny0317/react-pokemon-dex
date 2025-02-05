@@ -1,17 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import picture1 from "../png/logo.png";
-import styled from "styled-components";
-
-const HomeDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  place-items: center;
-  margin: 10rem;
-`;
-const HomeImg = styled.img`
-  width: 800px;
-  margin: 2rem;
-`;
+import { HomeDiv, HomeImg } from "../style/styledcomponent";
 
 const Home = () => {
   const navigate = useNavigate();
