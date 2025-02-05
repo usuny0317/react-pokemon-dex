@@ -18,12 +18,9 @@ const pokemonSlice = createSlice({
       }
     },
     deletePokemon: (state, action) => {
-      console.log("되는중?", state);
-
       return (state = state.filter((poke) => {
         return poke.id !== action.payload.id;
       }));
-      console.log("됐나?", state);
     },
   },
 });
