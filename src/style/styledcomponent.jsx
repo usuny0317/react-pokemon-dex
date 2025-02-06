@@ -132,3 +132,8 @@ export const ButtonCard = styled.button`
   font-weight: bold;
   width: 100px;
 `;
+
+/* toast 커스텀 하기 */
+export const CustomWarnToast = styled`
+
+`;
