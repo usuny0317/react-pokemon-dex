@@ -10,7 +10,11 @@ import {
 const PokemonDetail = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const info = { ...location.state };
+  const params = new URLSearchParams(location.search);
+
+  const info = params.get("mock")
+    ? JSON.parse(decodeURIComponent(params.get("mock")))
+    : {};
   return (
     <DetailDiv>
       <DetailImg src={`${info.img_url}`} />

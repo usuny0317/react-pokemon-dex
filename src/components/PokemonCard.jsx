@@ -6,18 +6,11 @@ import { useNavigate } from "react-router-dom";
 const PokemonCard = (mock) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const quertString = encodeURIComponent(JSON.stringify(mock));
   return (
     <CardDiv
       onClick={() => {
-        navigate("/detail", {
-          state: {
-            img_url: mock.img_url,
-            korean_name: mock.korean_name,
-            types: mock.types,
-            id: mock.id,
-            description: mock.description,
-          },
-        });
+        navigate(`/detail?mock=${quertString}`);
       }}
     >
       <img src={`${mock.img_url}`} />
