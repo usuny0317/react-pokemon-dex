@@ -7,6 +7,7 @@ import {
   BeforeCatch,
   AfterCatch,
   ButtonCard,
+  Detailtitle,
 } from "../style/styledcomponent";
 
 const Dashboard = () => {
@@ -22,7 +23,7 @@ const Dashboard = () => {
 
   return (
     <DashDiv>
-      <h1>나만의 포켓몬</h1>
+      <Detailtitle>나만의 포켓몬</Detailtitle>
       <BallDiv>
         {myPoke.map(function (poke) {
           return (

@@ -24,7 +24,8 @@ const PokemonCard = (mock) => {
       <span>{mock.korean_name}</span>
       <span>No. {mock.id}</span>
       <ButtonCard
-        onClick={() => {
+        onClick={(e) => {
+          e.stopPropagation();
           dispatch(
             addPokemon({
               img_url: mock.img_url,

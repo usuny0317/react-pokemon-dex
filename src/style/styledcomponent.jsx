@@ -66,8 +66,8 @@ export const DetailDiv = styled.div`
 `;
 
 export const DetailImg = styled.img`
-  width: 200px;
-  height: 200px;
+  width: 250x;
+  height: 250px;
   object-fit: cover;
 `;
 
@@ -77,9 +77,10 @@ export const DetailSpan = styled.span`
   font-weight: bold;
 `;
 
-export const Detailtitle = styled.h2`
+export const Detailtitle = styled.h1`
   font-weight: bold;
   color: #dc6e55;
+  padding-top: 20px;
 `;
 
 /* home */
