@@ -7,6 +7,7 @@ export const DashDiv = styled.div`
   place-items: center;
   height: 300px;
   margin: 10px;
+  user-select: none;
 `;
 
 export const BallDiv = styled.div`
@@ -42,6 +43,8 @@ export const CardDiv = styled.div`
   margin: 10px;
   padding: 10px;
   gap: 5px;
+
+  user-select: none;
 `;
 
 /* pokemonlist */
@@ -63,6 +66,7 @@ export const DetailDiv = styled.div`
   display: flex;
   flex-direction: column;
   place-items: center;
+  user-select: none;
 `;
 
 export const DetailImg = styled.img`
@@ -81,6 +85,7 @@ export const Detailtitle = styled.h1`
   font-weight: bold;
   color: #dc6e55;
   padding-top: 20px;
+  pointer-events: none;
 `;
 
 /* home */
@@ -89,6 +94,7 @@ export const HomeDiv = styled.div`
   flex-direction: column;
   place-items: center;
   margin: 10rem;
+  user-select: none;
 `;
 
 export const HomeImg = styled.img`
@@ -131,9 +137,4 @@ export const ButtonCard = styled.button`
   color: black;
   font-weight: bold;
   width: 100px;
-`;
-
-/* toast 커스텀 하기 */
-export const CustomWarnToast = styled`
-
 `;
