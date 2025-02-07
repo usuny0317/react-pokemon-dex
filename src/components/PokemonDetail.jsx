@@ -15,8 +15,6 @@ const PokemonDetail = () => {
     ? JSON.parse(decodeURIComponent(params.get("mock")))
     : {};
 
-  const dispatch = useDispatch();
-
   return (
     <DetailDiv>
       <DetailImg src={`${info.img_url}`} />
@@ -33,22 +31,6 @@ const PokemonDetail = () => {
         }}
       >
         뒤로가기
-      </ButtonCard>
-      <ButtonCard
-        onClick={(e) => {
-          e.stopPropagation();
-          dispatch(
-            addPokemon({
-              img_url: info.img_url,
-              korean_name: info.korean_name,
-              types: info.types,
-              id: info.id,
-              description: info.description,
-            })
-          );
-        }}
-      >
-        추가하기
       </ButtonCard>
     </DetailDiv>
   );

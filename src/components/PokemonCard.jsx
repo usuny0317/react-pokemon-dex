@@ -1,10 +1,10 @@
 import { ButtonCard, CardDiv } from "../style/styledcomponent";
 import { useNavigate } from "react-router-dom";
 
-const PokemonCard = (mock) => {
-  const dispatch = useDispatch();
+const PokemonCard = ({ mock = {}, addMy }) => {
   const navigate = useNavigate();
   const quertString = encodeURIComponent(JSON.stringify(mock));
+
   return (
     <CardDiv
       onClick={() => {
@@ -17,15 +17,7 @@ const PokemonCard = (mock) => {
       <ButtonCard
         onClick={(e) => {
           e.stopPropagation();
-          dispatch(
-            addPokemon({
-              img_url: mock.img_url,
-              korean_name: mock.korean_name,
-              types: mock.types,
-              id: mock.id,
-              description: mock.description,
-            })
-          );
+          addMy(mock);
         }}
       >
         추가
