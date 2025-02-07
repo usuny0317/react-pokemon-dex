@@ -6,8 +6,6 @@ import {
   DetailSpan,
   Detailtitle,
 } from "../style/styledcomponent";
-import { useDispatch } from "react-redux";
-import { addPokemon } from "../slices/pokemonsSlice";
 
 const PokemonDetail = () => {
   const navigate = useNavigate();

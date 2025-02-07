@@ -1,5 +1,3 @@
-import { addPokemon } from "../slices/pokemonsSlice";
-import { useDispatch } from "react-redux";
 import { ButtonCard, CardDiv } from "../style/styledcomponent";
 import { useNavigate } from "react-router-dom";
 

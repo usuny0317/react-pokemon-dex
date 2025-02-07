@@ -1,6 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
 import picture2 from "../png/ball.png";
-import { deletePokemon } from "../slices/pokemonsSlice";
 import {
   DashDiv,
   BallDiv,
