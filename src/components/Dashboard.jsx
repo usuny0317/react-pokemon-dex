@@ -7,10 +7,7 @@ import {
   ButtonCard,
   Detailtitle,
 } from "../style/styledcomponent";
-
-const Dashboard = () => {
-  const myPoke = useSelector((state) => state.pokemons);
-  const dispatch = useDispatch();
+const Dashboard = (myPoke, deleteMy) => {
   const defaultcard = () => {
     let result = [];
     for (let i = myPoke.length; i < 6; i++) {
@@ -29,15 +26,7 @@ const Dashboard = () => {
               <img src={`${poke.img_url}`}></img>
               <span>{poke.korean_name}</span>
               <span>No. {poke.id}</span>
-              <ButtonCard
-                onClick={() => {
-                  dispatch(
-                    deletePokemon({
-                      id: poke.id,
-                    })
-                  );
-                }}
-              >
+              <ButtonCard onClick={() => deleteMy(poke.id)}>
                 삭제하기
               </ButtonCard>
             </AfterCatch>
