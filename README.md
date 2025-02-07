@@ -1,5 +1,12 @@
 # React + Vite
 
+props-drilling 브랜치
+
+브랜치 명은 props지만 공식 명칭은 prop-drilling이 맞다고 피드백 받았음
+<br/>
+react - useState 사용용
+<br/>
+
 ```
 react-pokemon
 ├─ .git
@@ -11,7 +18,6 @@ react-pokemon
 │  └─ vite.svg
 ├─ README.md
 ├─ src
-│  ├─ App.css
 │  ├─ App.jsx
 │  ├─ assets
 │  │  └─ react.svg
@@ -20,16 +26,17 @@ react-pokemon
 │  │  ├─ Dex.jsx
 │  │  ├─ Home.jsx
 │  │  ├─ PokemonCard.jsx
+│  │  ├─ PokemonDetail.jsx
 │  │  └─ PokemonList.jsx
-│  ├─ config
-│  │  └─ configStore.js
-│  ├─ index.css
 │  ├─ main.jsx
 │  ├─ MOCK_DATA.js
+│  ├─ png
+│  │  ├─ ball.png
+│  │  └─ logo.png
 │  ├─ shared
 │  │  └─ Router.jsx
-│  └─ slices
-│     └─ pokemonsSlice.js
+│  └─ style
+│     └─ styledcomponent.jsx
 ├─ vite.config.js
 └─ yarn.lock
 
