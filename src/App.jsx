@@ -9,5 +9,5 @@ function App() {
     </>
   );
 }
-/*지금은 main 브랜치 입니다 RTK를 사용했어요!*/
+/*지금은 context 브랜치 입니다 context API를 사용했어요!*/
 export default App;

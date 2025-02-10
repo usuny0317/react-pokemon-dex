@@ -1,10 +1,10 @@
-import { addPokemon } from "../slices/pokemonsSlice";
-import { useDispatch } from "react-redux";
+import { usePokemon } from "../context/PokemonContext";
 import { ButtonCard, CardDiv } from "../style/styledcomponent";
 import { useNavigate } from "react-router-dom";
 
 const PokemonCard = (mock) => {
-  const dispatch = useDispatch();
+  const { addPokemon } = usePokemon();
+
   const navigate = useNavigate();
   const quertString = encodeURIComponent(JSON.stringify(mock));
   return (
@@ -19,15 +19,13 @@ const PokemonCard = (mock) => {
       <ButtonCard
         onClick={(e) => {
           e.stopPropagation();
-          dispatch(
-            addPokemon({
-              img_url: mock.img_url,
-              korean_name: mock.korean_name,
-              types: mock.types,
-              id: mock.id,
-              description: mock.description,
-            })
-          );
+          addPokemon({
+            img_url: mock.img_url,
+            korean_name: mock.korean_name,
+            types: mock.types,
+            id: mock.id,
+            description: mock.description,
+          });
         }}
       >
         추가

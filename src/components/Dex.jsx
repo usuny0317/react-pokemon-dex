@@ -1,11 +1,14 @@
+import { PokemonProvider } from "../context/PokemonContext";
 import Dashboard from "./Dashboard";
 import PokemonList from "./PokemonList";
 const Dex = () => {
   return (
-    <div>
-      <Dashboard />
-      <PokemonList />
-    </div>
+    <PokemonProvider>
+      <div>
+        <Dashboard />
+        <PokemonList />
+      </div>
+    </PokemonProvider>
   );
 };
 

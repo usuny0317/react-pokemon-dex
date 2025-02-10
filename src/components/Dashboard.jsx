@@ -1,6 +1,5 @@
-import { useDispatch, useSelector } from "react-redux";
+import { usePokemon } from "../context/PokemonContext";
 import picture2 from "../png/ball.png";
-import { deletePokemon } from "../slices/pokemonsSlice";
 import {
   DashDiv,
   BallDiv,
@@ -11,12 +10,12 @@ import {
 } from "../style/styledcomponent";
 
 const Dashboard = () => {
-  const myPoke = useSelector((state) => state.pokemons);
-  const dispatch = useDispatch();
+  const { myPoke, delPokemon } = usePokemon();
+
   const defaultcard = () => {
     let result = [];
     for (let i = myPoke.length; i < 6; i++) {
-      result.push(<BeforeCatch src={picture2} />);
+      result.push(<BeforeCatch key={i} src={picture2} />);
     }
     return result;
   };
@@ -33,11 +32,7 @@ const Dashboard = () => {
               <span>No. {poke.id}</span>
               <ButtonCard
                 onClick={() => {
-                  dispatch(
-                    deletePokemon({
-                      id: poke.id,
-                    })
-                  );
+                  delPokemon(poke.id);
                 }}
               >
                 삭제하기
