@@ -2,8 +2,6 @@
 
 ```
 react-pokemon
-├─ .git
-├─ .gitignore
 ├─ eslint.config.js
 ├─ index.html
 ├─ package.json
@@ -20,16 +18,22 @@ react-pokemon
 │  │  ├─ Dex.jsx
 │  │  ├─ Home.jsx
 │  │  ├─ PokemonCard.jsx
+│  │  ├─ PokemonDetail.jsx
 │  │  └─ PokemonList.jsx
 │  ├─ config
 │  │  └─ configStore.js
 │  ├─ index.css
 │  ├─ main.jsx
 │  ├─ MOCK_DATA.js
+│  ├─ png
+│  │  ├─ ball.png
+│  │  └─ logo.png
 │  ├─ shared
 │  │  └─ Router.jsx
-│  └─ slices
-│     └─ pokemonsSlice.js
+│  ├─ slices
+│  │  └─ pokemonsSlice.js
+│  └─ style
+│     └─ styledcomponent.jsx
 ├─ vite.config.js
 └─ yarn.lock
 
